@@ -1,0 +1,60 @@
+{
+	"Create Class": {
+		"scope": "cpp",
+		"prefix": "create class",
+		"body": [
+			"#include \"../inc/$TM_FILENAME_BASE.hpp\"",
+			"",
+			"$TM_FILENAME_BASE::$TM_FILENAME_BASE()",
+			"{",
+			"\t",
+			"}",
+			"",
+			"$TM_FILENAME_BASE::$TM_FILENAME_BASE(const $TM_FILENAME_BASE& to_copy)",
+			"{",
+			"\t",
+			"}",
+			"",	
+			"$TM_FILENAME_BASE::~$TM_FILENAME_BASE()",
+			"{",
+			"\t",
+			"}",
+			"",	
+			"$TM_FILENAME_BASE& $TM_FILENAME_BASE::operator=(const $TM_FILENAME_BASE& to_assign)",
+			"{",
+				"\tif (this != &to_assign)",
+				"\t{",
+				"\t\t",
+				"\t}",
+				"\treturn (*this);",
+			"}"
+		],
+		"description": "Create class from opened cpp file."
+	},
+
+	"Create Header": {
+		"scope": "cpp",
+		"prefix": "create header",
+		"body": [
+			"#ifndef ${TM_FILENAME_BASE/(.*)/${1:/upcase}/}_HPP",
+			"#define ${TM_FILENAME_BASE/(.*)/${1:/upcase}/}_HPP",
+			"",
+			"#include <iostream>",
+			"#include <string>",
+			"",
+			"class $TM_FILENAME_BASE",
+			"{",
+			"private:",
+			"\t",
+			"public:",
+				"\t$TM_FILENAME_BASE();",
+				"\t~$TM_FILENAME_BASE();",
+				"\t$TM_FILENAME_BASE(const $TM_FILENAME_BASE& to_copy);",
+				"\t$TM_FILENAME_BASE& operator=(const $TM_FILENAME_BASE& to_assign);",
+			"};",
+			"",
+			"#endif",
+		],
+		"description": "creates header from opened hpp file."
+	}
+}
